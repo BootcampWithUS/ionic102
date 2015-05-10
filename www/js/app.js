@@ -6,11 +6,11 @@ angular.module('App', ['ionic'])
     .state('home', {
       url: '/home',
       templateUrl: 'views/home/home.html'
-    }),
-    .state('cats', {
-      url: '/cats',
-      controller: 'CatController',
-      templateUrl: 'views/cat/cat.html'
+    })
+    .state('people', {
+      url: '/people',
+      controller: 'PeopleController',
+      templateUrl: 'views/people/people.html'
     });
 
   $urlRouterProvider.otherwise('/home');

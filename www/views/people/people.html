@@ -1,0 +1,15 @@
+<ion-view view-title="People">
+  <ion-content>
+    <div class="list">
+      <div class="item item-icon-left">
+        <i class="icon ion-android-person"></i> Name: {{people.name}}
+      </div>
+      <div class="item">
+        <img ng-src="{{people.image}}" class="image-list-thumb"/>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-ios-location"></i> City: {{people.location.city}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
