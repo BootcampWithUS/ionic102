@@ -1,39 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <!-- Presentation created using reveal.js: https://github.com/hakimel/reveal.js -->
+    <!-- Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se -->
 
-	<head>
-		<meta charset="utf-8">
+    <title>Construyendo una PIC app</title>
 
-		<title>Ionic 101 -  Construyendo una TODO App</title>
+    <meta name="description" content="Ionic Framework Presentation: The beautiful, open source framework for developing hybrid mobile apps with HTML5.">
+    <meta name="author" content="https://twitter.com/adamdbradley">
+    <meta name="author" content="https://twitter.com/benjsperry">
+    <meta name="author" content="https://twitter.com/carlosrojas_o">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="description" content="Construyendo una TODO App">
-		<meta name="author" content="Bootcampwithus">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/ionic.css" id="theme">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+  </head>
 
 	<body>
 
@@ -42,7 +36,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1><img width="150" style="background:none; border:none; box-shadow:none;" src="css/images/Ionic-Icon.png"/> Ionic 102</h1>
+					<h1><img width="300" style="background:none; border:none; box-shadow:none;" src="img/ionic-logo.png"/> 102</h1>
 					<h3>Construyendo una PICs App</h3>
 					<p>
 						<small>Instructor(es):<br/> <a href="http://io.carlosrojasblog.com">Carlos Rojas</a> [carlos@bootcampwith.us] / <a href="http://twitter.com/carlosrojas_o">@carlosrojas_o</a><br/>
@@ -50,7 +44,6 @@
 					</p>
 				</section>
 
-				<div class="slides">
 					<section>
 						<h1>Objetivo</h1>
 						<p>
@@ -59,143 +52,150 @@
 					</section>
 
 
+          <section>
+            <div class="col preview demo-frame">
+              <iframe src="demos/navigation/index.html"></iframe>
+            </div>
+            <div class="col code">
+              <h2>Navegacion</h2>
+              <ul style="margin-left: 70px">
+                <li>Uso de AngularUI Router</li>
+                <li>Muestra boton de regreso cuando es posible</li>
+                <li>Transicion para seguir la direccion de la navegacion</li>
+                <li>Trabaja con el Boton de Regresar de Android</li>
+              </ul>
+            <pre><code data-trim contenteditable class="xml">
+  <ion-nav-bar>
+    <ion-nav-back-button>
+      Back
+    </ion-nav-back-button>
+  </ion-nav-bar>
 
-				<section>
-					<section>
-					<h2>¿Que estamos haciendo?</h2>
-					<p>
-						<img width="55%" style="border:0" src="images/meme1.gif"/>
-					</p>
-					</section>
-					<section>
-						<h2>1. Idearemos</h2>
-						<p><img width="55%" style="border:0" src="images/brain.jpg"/></p>
-					</section>
-					<section>
-						<h2>2. Diseñaremos</h2>
-						<p><img width="55%" style="border:0" src="images/mockups.png"/></p>
-					</section>
-					<section>
-						<h2>3. Prototiparemos</h2>
-						<p><img width="55%" style="border:0" src="images/prototipo.png"/></p>
-					</section>
-					<section>
-						<h2>4. Probaremos</h2>
-						<p><img width="55%" style="border:0" src="images/testing.jpg"/></p>
-					</section>
-					<section>
-						<h2>5. Mediremos</h2>
-						<p><img width="55%" style="border:0" src="images/measure.jpg"/></p>
-					</section>
-				</section>
+  <ion-nav-view></ion-nav-view>
+  </code></pre>
+            </div>
+          </section>
 
-				<section>
-					<section>
-					<h1>1</h1>
-					</section>
-					<section>
-						<p><img width="55%" style="border:0" src="images/todolist.png"/></p>
-					</section>
+          <section>
+            <div class="col preview demo-frame">
+              <iframe src="demos/slidebox/index.html"></iframe>
+            </div>
+            <div class="col code">
+              <h2>Slide Box</h2>
+            <pre><code data-trim contenteditable class="xml">
+  <ion-slide-box on-slide-changed="change(index)">
+    <ion-slide>
+      Slide 1
+    </ion-slide>
+    <ion-slide>
+      Slide 2
+    </ion-slide>
+    <ion-slide>
+      Slide 3
+    </ion-slide>
+  </ion-slide-box></code></pre>
+            </div>
+          </section>
 
-				</section>
+          <section>
+            <div class="col preview demo-frame">
+              <iframe src="demos/spinner/index.html"></iframe>
+            </div>
+            <div class="col code">
+              <h2>Spinners</h2>
+              <ul style="margin-left: 70px">
+                <li>Animated SVGs</li>
+                <li>More than just rotating icons</li>
+                <li>Defaults to platform's spinner</li>
+                <li>Style with CSS</li>
+              </ul>
+            <pre><code data-trim contenteditable class="xml">
+  <ion-spinner></ion-spinner>
 
-				<section>
-					<section>
-					<h1>2</h1>
-					</section>
-					<section>
-						<p><img width="55%" style="border:0" src="images/TodoMock.png"/></p>
-					</section>
+  <ion-spinner icon="dots"></ion-spinner>
 
-				</section>
+  <ion-spinner class="spinner-light"></ion-spinner></code></pre>
+            </div>
+          </section>
 
-				<section>
-					<section>
-					<h1>3</h1>
-					</section>
-					<section>
-						<h2>Alcance del Prototipo.</h2>
-						<p>
-							<ul>
-							<li>
-								Agregar Items.
-						   </li>
-						   <li>
-								Remover Items.
-						   </li>
-						   <li>
-								Ver Items.
-						   </li>
-						</ul>
-					</p>
-					</section>
-					<section>
-						<img width="55%" style="border:0" src="images/1.png"/>
-					</section>
+          <section>
+            <div class="col preview demo-frame">
+              <iframe src="demos/infinitescroll/index.html"></iframe>
+            </div>
+            <div class="col code">
+              <h2>Infinite Scroll</h2>
+              <ul style="margin-left: 70px">
+                <li>Animated SVGs</li>
+                <li>More than just rotating icons</li>
+                <li>Defaults to platform's spinner</li>
+                <li>Style with CSS</li>
+              </ul>
+            <pre><code data-trim contenteditable class="xml">
+  <ion-spinner></ion-spinner>
 
-					<section>
-						<p><img width="55%" style="border:0" src="images/2.png"/></p>
-					</section>
-					<section>
-						<p><img width="55%" style="border:0" src="images/3.png"/></p>
-					</section>
-					<section>
-						<p><img width="55%" style="border:0" src="images/4.png"/></p>
-					</section>
-					<section>
-						<p><img width="55%" style="border:0" src="images/5.png"/></p>
-					</section>
-					<section>
-						<p><img width="55%" style="border:0" src="images/6.png"/></p>
-					</section>
+  <ion-spinner icon="dots"></ion-spinner>
 
-				</section>
+  <ion-spinner class="spinner-light"></ion-spinner></code></pre>
+            </div>
+          </section>
 
-				<section>
-					<section>
-					<h1>4</h1>
-					</section>
+          <section>
+            <div class="col preview">
+              <img src="img/list-example.png" class="logo" width="380" height="800">
+            </div>
+            <div class="col code">
+              <h2>Listas</h2>
+            <pre><code data-trim contenteditable class="xml">
+  <div class="list">
 
-				</section>
+    <div class="item item-divider">
+      Candy Bars
+    </div>
 
-				<section>
-					<section>
-					<h1>5</h1>
-					</section>
+    <a class="item" href="#">
+      Butterfinger
+    </a>
 
-				</section>
+    <a class="item" href="#">
+      Kit Kat
+    </a>
+
+    ...
+
+  </div></code></pre>
+            </div>
+          </section>
 
 			</div>
 
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    <script src="js/reveal.min.js"></script>
 
-		<script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
+      if(location.protocol == 'file:') {
+        alert('This presentation must be hosted be a web server for the demos to work, such as python -m SimpleHTTPServer')
+      }
+    </script>
 
 	</body>
 </html>
