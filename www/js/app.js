@@ -11,7 +11,13 @@ angular.module('App', ['ionic'])
       url: '/people',
       controller: 'PeopleController',
       templateUrl: 'views/people/people.html'
-    });
+    })
+    .state('cats', {
+      url: '/cats',
+      controller: 'CatController',
+      templateUrl: 'views/cats/cats.html'
+    })
+    ;
 
   $urlRouterProvider.otherwise('/home');
 
