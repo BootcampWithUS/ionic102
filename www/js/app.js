@@ -3,6 +3,10 @@ angular.module('App', ['ionic'])
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
+      .state('start', {
+        url: '/start',
+        templateUrl: 'views/start/start.html'
+      })
     .state('home', {
       url: '/home',
       templateUrl: 'views/home/home.html'
@@ -23,7 +27,7 @@ angular.module('App', ['ionic'])
       templateUrl: 'views/cats/cats.html'
     });
 
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/start');
 
 })
 
