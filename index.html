@@ -38,17 +38,50 @@
 				<section>
 					<h1><img width="300" style="background:none; border:none; box-shadow:none;" src="img/ionic-logo.png"/> 102</h1>
 					<h3>Construyendo una PICs App</h3>
-					<p>
-						<small>Instructor(es):<br/> <a href="http://io.carlosrojasblog.com">Carlos Rojas</a> [carlos@bootcampwith.us] / <a href="http://twitter.com/carlosrojas_o">@carlosrojas_o</a><br/>
-						</small>
-					</p>
 				</section>
+
+        <section>
+          <img src="img/me.jpg" style="width:200px; height: 200px;
+                                       max-width:none; max-height: none;
+                                       position: absolute; left: 40px; top: -10px;
+                                       border-radius: 50%; border: 4px solid black;
+                                       box-shadow: 5px 0 10px black;">
+          <h2 class="left dark-shadow" style="margin-left:300px;">Carlos Rojas</h2>
+          <h3 class="left dark-shadow" style="margin-left:300px;">Co-founder Sponzor.Me</h3>
+
+          <h4 style="margin-left:300px;">    <a href="https://twitter.com/carlosrojas_o" target="_blank" style="text-decoration:none">@carlosrojas_o</a></h4>
+          <h4 style="margin-left:300px"> http://youtube.com/carlosrojas84</h4>
+        </section>
 
 					<section>
 						<h1>Objetivo</h1>
 						<p>
 							Aprender sobre Navigation, Slide Box, Loaders, Infinite Scroll y List
 						</p>
+					</section>
+
+          <section>
+						<h2>Alcance</h2>
+						<ul>
+              <li>
+                  Conocer los componentes de Ionic.
+              </li>
+              <li>
+                  Construyendo la navegacion de la App.
+              </li>
+              <li>
+                  Construyendo Vistas y Controladores.
+              </li>
+              <li>
+                  Cargando data.
+              </li>
+              <li>
+                  Usando el Infinite Scroll
+              </li>
+              <li>
+                  Usando el Slide Box
+              </li>
+            </ul>
 					</section>
 
 
@@ -102,19 +135,25 @@
               <iframe src="demos/spinner/index.html"></iframe>
             </div>
             <div class="col code">
-              <h2>Spinners</h2>
+              <h2>$ionicLoading</h2>
               <ul style="margin-left: 70px">
-                <li>Animated SVGs</li>
-                <li>More than just rotating icons</li>
-                <li>Defaults to platform's spinner</li>
-                <li>Style with CSS</li>
+                <li>An overlay that can be used to indicate activity while blocking user interaction.</li>
               </ul>
             <pre><code data-trim contenteditable class="xml">
-  <ion-spinner></ion-spinner>
 
-  <ion-spinner icon="dots"></ion-spinner>
+              angular.module('LoadingApp', ['ionic'])
+            .controller('LoadingCtrl', function($scope, $ionicLoading) {
+              $scope.show = function() {
+                $ionicLoading.show({
+                  template: 'Loading...'
+                });
+              };
+              $scope.hide = function(){
+                $ionicLoading.hide();
+              };
+            });
 
-  <ion-spinner class="spinner-light"></ion-spinner></code></pre>
+            </code></pre>
             </div>
           </section>
 
@@ -125,17 +164,21 @@
             <div class="col code">
               <h2>Infinite Scroll</h2>
               <ul style="margin-left: 70px">
-                <li>Animated SVGs</li>
-                <li>More than just rotating icons</li>
-                <li>Defaults to platform's spinner</li>
-                <li>Style with CSS</li>
+                <li>Directiva</li>
               </ul>
             <pre><code data-trim contenteditable class="xml">
-  <ion-spinner></ion-spinner>
+              <ion-content ng-controller="MyController">
+              <ion-list>
+              ....
+              ....
+              </ion-list>
 
-  <ion-spinner icon="dots"></ion-spinner>
-
-  <ion-spinner class="spinner-light"></ion-spinner></code></pre>
+              <ion-infinite-scroll
+                on-infinite="loadMore()"
+                distance="1%">
+              </ion-infinite-scroll>
+            </ion-content>
+            </code></pre>
             </div>
           </section>
 
@@ -165,6 +208,35 @@
   </div></code></pre>
             </div>
           </section>
+
+          <section>
+            <h1>Hola PicsApp</h1>
+          </section>
+          <section>
+          <section>
+            <img src="img/picapps.png"></img>
+          </section>
+          <section>
+            <img src="img/picapps1.png"></img>
+          </section>
+          <section>
+            <img src="img/picapps2.png"></img>
+          </section>
+          <section>
+            <img src="img/picapps3.png"></img>
+          </section>
+          <section>
+            <img src="img/picapps4.png"></img>
+          </section>
+          <section>
+            <img src="img/picapps5.png"></img>
+          </section>
+
+        </section>
+
+        <section>
+          Gracias!!
+        </section>
 
 			</div>
 
