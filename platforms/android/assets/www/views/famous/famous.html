@@ -1,0 +1,14 @@
+<ion-view view-title="Famous People">
+  <ion-content>
+    <div class="list card" ng-repeat="people in famous">
+      <div class="item">
+        <h2>{{people.user.name.first}} {{people.user.name.last}}</h2>
+        <p>{{people.user.location.city}}, {{people.user.phone}}</p>
+      </div>
+      <div class="item item-image">
+        <img ng-src="{{people.user.picture.thumbnail}}" />
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="getFamous()" ng-if="total < page" immediate-check="false"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
